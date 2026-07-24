@@ -48,14 +48,19 @@ Welcome to **Lecture 2**! This documentation covers text formatting, semantics, 
 
 ---
 
-## 🏗️ სემანტიკური HTML5 სტრუქტურა / Semantic Structure
+## 🏗️ სტრუქტურული სემანტიკა / Structural Semantics (HTML5)
 
-- **`<header>`** — გვერდის ან სექციის თავსართი (ლოგო, სათაური).
-- **`<nav>`** — ნავიგაციის ბლოკი (მენიუ, ბმულები).
-- **`<main>`** — გვერდის ძირითადი, უნიკალური კონტენტი.
-- **`<article>`** — დამოუკიდებელი, სრული შინაარსის ბლოკი (მაგ. ბლოგ პოსტი).
-- **`<section>`** — გვერდის თემატური სექცია/ჯგუფი.
-- **`<footer>`** — გვერდის ან სექციის ბოლოსართი (საავტორო უფლებები, კონტაქტი).
+სტრუქტურული თეგები გამოიყენება ვებ-გვერდის ლოგიკურ ზონებად დასაყოფად:
+
+| თეგი (Tag)  | ქართული განმარტება                                                                         | English Description                                                         |
+| :---------- | :----------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
+| `<header>`  | **საიტის/სექციის თავსართი.** შეიცავს ლოგოს, სათაურს ან მენიუს.                             | **Header.** Represents introductory content, logos, or navigation.          |
+| `<nav>`     | **ნავიგაცია.** შეიცავს საიტის მთავარ სანავიგაციო ბმულებს.                                  | **Navigation.** Contains navigation links for the document.                 |
+| `<main>`    | **მთავარი კონტენტი.** გვერდის უნიკალური შინაარსი (გვერდზე გამოიყენება მხოლოდ 1-ჯერ).       | **Main content.** Specifies the dominant, unique content of the `<body>`.   |
+| `<section>` | **თემატური სექცია.** ჯგუფავს მონათესავე კონტენტს (ჩვეულებრივ აქვს `<h2>`-`<h6>` სათაური).  | **Section.** Defines a standalone section of related content.               |
+| `<article>` | **დამოუკიდებელი კონტენტი.** ბლოგი, სიახლე ან ბარათი, რომელსაც ცალკე ავტონომიური აზრი აქვს. | **Article.** Self-contained composition (e.g., blog post, news story).      |
+| `<aside>`   | **გვერდითი პანელი (Sidebar).** არაპირდაპირი/დამხმარე ინფორმაცია (რეკლამა, ბმულები).        | **Aside.** Indirectly related content (e.g., sidebars, callout boxes).      |
+| `<footer>`  | **საიტის/სექციის ბოლოსართი.** საავტორო უფლებები, კონტაქტები და ლინკები.                    | **Footer.** Defines a footer for a document or section (copyrights, links). |
 
 ---
 
@@ -89,4 +94,5 @@ Welcome to **Lecture 2**! This documentation covers text formatting, semantics, 
 #### 4. ბმულები (Links)
 
 - მინიმუმ 2 გარე ბმული (`<a>`) თქვენს LinkedIn-ზე, GitHub-ზე ან საყვარელ საიტზე, რომლებიც გაიხსნება **ახალ ჩანართში** (`target="_blank"`).
+
 # Mentoring-Program
