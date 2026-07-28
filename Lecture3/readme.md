@@ -1,18 +1,75 @@
 # 📝 Web Development / Lecture 3: HTML Forms & Validation — Lecture Summary & Homework
 
-მოგესალმებით! ამ დოკუმენტში გაერთიანებულია მე-3 ლექციის ძირითადი თეორიული მასალა, პრაქტიკული დავალება, საუკეთესო პრაქტიკები და სასარგებლო რესურსები.
+მოგესალმებით! ამ დოკუმენტში გაერთიანებულია მე-3 ლექციის ძირითადი თეორიული მასალა, HTML Form ელემენტებისა და **ყველა არსებული Input ტიპის** სრული ცნობარი (ქართულ-ინგლისური განმარტებებით), პრაქტიკული დავალება და სასარგებლო რესურსები.
 
 ---
 
-## 📚 1. ლექციის მოკლე შეჯამება (Lecture Recap)
+## 📚 1. HTML Form ელემენტების სრული ცნობარი (Form Elements Guide)
 
-- **`<form>` ტეგი:** გამოიყენება მომხმარებლისგან მონაცემების შეგროვებისა და სერვერზე გაგზავნისთვის.
-  - `action` — სერვერის URL, სადაც იგზავნება მონაცემები.
-  - `method` — HTTP მეთოდი: `GET` (მონაცემები ჩანს URL-ში, გამოიყენება ძებნისთვის) ან `POST` (მონაცემები დაფარულია Request Body-ში, გამოიყენება რეგისტრაცია/ავტორიზაციისთვის).
-- **`name` ატრიბუტი:** **სავალდებულოა!** `name` ატრიბუტის გარეშე input-ის მნიშვნელობა სერვერზე არ გაიგზავნება.
-- **`<label>` ტეგი:** აკავშირებს ტექსტს input-თან (`for` ატრიბუტით). აუმჯობესებს UX-ს და Accessibility-ს.
-- **Input ტიპები:** `text`, `password`, `email`, `number`, `tel`, `date`, `radio`, `checkbox`, `file` და სხვა.
-- **Native HTML5 Validation:** ბრაუზერის დონეზე შემოწმება ატრიბუტებით: `required`, `minlength`, `maxlength`, `min`, `max`, `pattern`.
+### 🧱 1.1 ძირითადი ტეგები (Core Form Tags)
+
+| ტეგი (Tag)       | აღწერა (Georgian Description)                                                 | Description (English)                                          |
+| :--------------- | :---------------------------------------------------------------------------- | :------------------------------------------------------------- |
+| **`<form>`**     | ფორმის მთავარი კონტეინერი, რომელიც აერთიანებს ინფუთებსა და გაგზავნის ლოგიკას. | Container for all form elements and controls.                  |
+| **`<label>`**    | ინფუთის ტექსტური დასახელება. აუმჯობესებს Accessibility-ს და UX-ს.             | Caption/label for a form control. Improves UX & accessibility. |
+| **`<input>`**    | ყველაზე მრავალფუნქციური ველი მონაცემების შესაყვანად.                          | Interactive control to accept data from the user.              |
+| **`<select>`**   | ჩამოსაშლელი სია (Dropdown menu).                                              | Dropdown list for selecting one or multiple options.           |
+| **`<option>`**   | ჩამოსაშლელი სიის (`<select>`) თითოეული ელემენტი/არჩევანი.                     | Individual option within a `<select>` dropdown menu.           |
+| **`<textarea>`** | მრავალხაზიანი ტექსტური ველი (მაგ. კომენტარებისთვის).                          | Multi-line text input field (e.g., for comments/feedback).     |
+| **`<fieldset>`** | ფორმის ლოგიკურად დაკავშირებული ველების ჯგუფი ჩარჩოთი.                         | Groups related elements within a form with a visible border.   |
+| **`<legend>`**   | `<fieldset>` ჯგუფის სათაური.                                                  | Caption/title for the content of a `<fieldset>`.               |
+| **`<button>`**   | ინტერაქტიული ღილაკი (Submit, Reset ან Custom JS action).                      | Clickable button used to submit form data or perform actions.  |
+
+---
+
+### 📥 1.2 Input ტიპების სრული ჩამონათვალი (`type="..."`)
+
+| Input Type                  | აღწერა (Georgian Description)                                      | Description (English)                                       |
+| :-------------------------- | :----------------------------------------------------------------- | :---------------------------------------------------------- |
+| **`type="text"`**           | სტანდარტული ერთხაზიანი ტექსტური ველი.                              | Single-line plain text field.                               |
+| **`type="password"`**       | დაფარული ტექსტური ველი პაროლისთვის (წერტილები/ვარსკვლავები).       | Masked text field for sensitive password input.             |
+| **`type="email"`**          | ელფოსტის ველი (`@` ფორმატის ავტომატური შემოწმებით).                | Input field that validates email address format.            |
+| **`type="number"`**         | რიცხვითი ველი (იღებს მხოლოდ ციფრებს, `min`/`max` ზღვრებით).        | Field for numeric input with spin-buttons.                  |
+| **`type="tel"`**            | ტელეფონის ნომრის ველი (მობილურზე ხსნის Numpad-ს).                  | Field for telephone numbers (opens numpad on mobile).       |
+| **`type="url"`**            | ვებ-მისამართის ველი (`http://` ან `https://` ფორმატის შემოწმებით). | Input field that validates web URL syntax.                  |
+| **`type="search"`**         | საძიებო ველი (ბრაუზერში ემატება ტექსტის სწრაფი წაშლის `x` ღილაკი). | Search field optimized for queries (includes clear button). |
+| **`type="date"`**           | თარიღის არჩევა კალენდარული ინტერფეისით (წელი, თვე, დღე).           | Date picker control (year, month, day).                     |
+| **`type="time"`**           | დროის არჩევა (საათი და წუთი).                                      | Time picker control (hours and minutes).                    |
+| **`type="datetime-local"`** | თარიღისა და დროის არჩევა ერთად (ადგილობრივი დროის ზონით).          | Date and time picker (year, month, day, hours, minutes).    |
+| **`type="month"`**          | თვისა და წლის არჩევა (მაგ. `2026-07`).                             | Month and year picker control.                              |
+| **`type="week"`**           | წლის კონკრეტული კვირის არჩევა (მაგ. `Week 30, 2026`).              | Week number and year picker control.                        |
+| **`type="range"`**          | სლაიდერი (Slider) რიცხვითი მნიშვნელობის ინტერვალში ასარჩევად.      | Slider control for selecting a value within a given range.  |
+| **`type="radio"`**          | რადიო ღილაკი ჯგუფიდან მხოლოდ ერთი ოპციის ასარჩევად.                | Radio button allowing only one selection from a group.      |
+| **`type="checkbox"`**       | ჩექბოქსი მრავალჯერადი არჩევანისთვის ან Toggle-სთვის.               | Checkbox allowing multiple selections or single toggle.     |
+| **`type="color"`**          | ფერის არჩევა Color Picker-ის პალიტრით (აბრუნებს Hex კოდს).         | Color picker control returning Hex color code.              |
+| **`type="file"`**           | ფაილების ატვირთვის ველი (შესაძლებელია `accept` და `multiple`).     | File-select control for uploading local files.              |
+| **`type="hidden"`**         | დამალული ველი (სერვერზე იგზავნება, მომხმარებელი ვერ ხედავს).       | Hidden input field sent to server without rendering on UI.  |
+| **`type="submit"`**         | ფორმის გაგზავნის ინფუთ-ღილაკი.                                     | Input rendered as a form submit button.                     |
+| **`type="reset"`**          | ფორმის გასუფთავების ინფუთ-ღილაკი საწყის მდგომარეობამდე.            | Input rendered as a form reset button.                      |
+| **`type="button"`**         | სტანდარტული ღილაკი (ჩვეულებრივ გამოიყენება JS-ისთვის).             | Generic input button without default behavior.              |
+| **`type="image"`**          | სურათის ფორმის Submit ღილაკად გამოყენება (`src` ატრიბუტით).        | Graphical submit button using an image URL.                 |
+
+---
+
+### ⚙️ 1.3 ატრიბუტები და Native ვალიდაცია (Attributes & Validation)
+
+| ატრიბუტი                      | აღწერა (Georgian Description)                                              | Description (English)                                               |
+| :---------------------------- | :------------------------------------------------------------------------- | :------------------------------------------------------------------ |
+| **`action`**                  | სერვერის URL, სადაც იგზავნება ფორმის მონაცემები.                           | URL where the form data will be submitted.                          |
+| **`method`**                  | HTTP მეთოდი (`GET` — URL-ში გამოჩენა, `POST` — Request Body-ში).           | HTTP method used (`GET` or `POST`).                                 |
+| **`name`**                    | **სავალდებულო!** მონაცემის გასაღები (Key) სერვერისთვის.                    | Name of the control; used as the key in form submission.            |
+| **`for` / `id`**              | აკავშირებს `<label>`-ს შესაბამის `<input>`-თან.                            | Connects a `<label>` element to its corresponding `<input>`.        |
+| **`placeholder`**             | დროებითი დამხმარე ტექსტი ველის შიგნით.                                     | Short hint displayed inside the input field before typing.          |
+| **`value`**                   | ველის საწყისი ან არჩეული მნიშვნელობა.                                      | Initial value or current submitted value of the element.            |
+| **`required`**                | ველის შევსებას ხდის სავალდებულოს.                                          | Specifies that an input field must be filled out before submitting. |
+| **`minlength` / `maxlength`** | ტექსტის მინიმალური / მაქსიმალური სიმბოლოების რაოდენობა.                    | Minimum/maximum character length for text input.                    |
+| **`min` / `max` / `step`**    | რიცხვის ან თარიღის მინიმალური/მაქსიმალური ზღვარი და ბიჯი.                  | Minimum/maximum value and increment step for numbers/dates.         |
+| **`pattern`**                 | ამოწმებს ტექსტის შესაბამისობას Regex ფორმატთან.                            | Regular expression defining expected input pattern.                 |
+| **`multiple`**                | იძლევა რამდენიმე ფაილის (`file`) ან ელფოსტის (`email`) არჩევის საშუალებას. | Allows multiple values (for file uploads or emails).                |
+| **`autofocus`**               | გვერდის ჩატვირთვისას ავტომატურად სვამს ფოკუსს/კურსორს ამ ველზე.            | Automatically focuses the input when page loads.                    |
+| **`autocomplete`**            | რთავს/თიშავს ბრაუზერის ავტოშევსებას (`on` / `off`).                        | Enables or disables browser auto-fill suggestions.                  |
+| **`disabled`**                | თიშავს ველს (მონაცემი **არ იგზავნება** სერვერზე).                          | Disables input (user cannot interact & data is not submitted).      |
+| **`readonly`**                | ველი მხოლოდ წაკითხვადია (მონაცემი **იგზავნება** სერვერზე).                 | Input is read-only (value cannot be changed but is submitted).      |
 
 ---
 
@@ -67,7 +124,7 @@
 
 ## 💡 3. ხშირად დაშვებული შეცდომები (Common Pitfalls)
 
-- ❌ **Input-ისთვის `name` ატრიბუტის დავიწყება:** ამ დროს ფორმა იგზავნება, მაგრამ ამ конкреტული ველის მონაცემი იკარგება.
+- ❌ **Input-ისთვის `name` ატრიბუტის დავიწყება:** ამ დროს ფორმა იგზავნება, მაგრამ ამ კონკრეტული ველის მონაცემი იკარგება (`No name = No Data`).
 - ❌ **`<label>`-ის `for` ატრიბუტის აცდენა input-ის `id`-სთან:** `for="email_input"` უნდა ემთხვეოდეს `id="email_input"`-ს, თორემ ლეიბლზე დაჭერით კურსორი input-ში არ ჩადგება.
 - ❌ **Radio button-ებისთვის განსხვავებული `name`-ების დარქმევა:** თუ Radio-ებს სხვადასხვა `name` აქვთ, მომხმარებელი შეძლებს ყველა ოპციის ერთდროულად არჩევას.
 - ❌ **Placeholder-ის გამოყენება Label-ის ნაცვლად:** Placeholder ქრება ტექსტის აკრეფისას და აუარესებს მომხმარებლის გამოცდილებას (UX).
