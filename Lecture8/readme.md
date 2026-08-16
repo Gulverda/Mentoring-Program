@@ -1,4 +1,4 @@
-# ⚡ Web Development / Lecture 9: JavaScript შესავალი, ცვლადები, მონაცემთა ტიპები და ოპერატორები
+# ⚡ Web Development / Lecture 8: JavaScript შესავალი, ცვლადები, მონაცემთა ტიპები და ოპერატორები
 
 ## 📌 ლექციის მიმოხილვა
 
