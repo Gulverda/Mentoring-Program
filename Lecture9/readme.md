@@ -1,4 +1,4 @@
-# 🔀 Web Development / Lecture 11-12: საკონტროლო ნაკადები (Conditionals) და ფუნქციები (Functions)
+# 🔀 Web Development / Lecture 9: საკონტროლო ნაკადები (Conditionals) და ფუნქციები (Functions)
 
 ## 📌 ლექციის მიმოხილვა
 
