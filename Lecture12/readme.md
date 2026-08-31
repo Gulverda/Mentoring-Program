@@ -1,4 +1,4 @@
-# ⏳ Web Development / Lecture 17: Asynchronous JavaScript — Promises, `async/await` და Fetch API
+# ⏳ Web Development / Lecture 12: Asynchronous JavaScript — Promises, `async/await` და Fetch API
 
 ## 📌 ლექციის მიმოხილვა
 
