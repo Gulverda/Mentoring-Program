@@ -228,11 +228,11 @@ export function Accordion({ title, content }) {
 
 ## React DevTools
 
-ექსთენშენის ლინკი: `https://react.dev/learn/react-developer-tools`
+ექსთენშენის ლინკი: [React DevTools]((https://react.dev/learn/react-developer-tools)) 
 
 ## React Documentation
 
-დოკუმენტაცია: `https://react.dev/learn`
+დოკუმენტაცია: [React Documentation]((https://react.dev/learn))
 
 ## 🏠 საშინაო დავალება (Homework)
 
