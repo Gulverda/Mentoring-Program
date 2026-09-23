@@ -225,23 +225,65 @@ export function Accordion({ title, content }) {
 | `{condition && <JSX />}`                      | Conditional Rendering                              |
 
 ---
+# React Homework
 
 ## React DevTools
 
-ექსთენშენის ლინკი: [React DevTools]((https://react.dev/learn/react-developer-tools)) 
+ექსთენშენის ლინკი: [React DevTools](https://react.dev/learn/react-developer-tools)
 
 ## React Documentation
 
-დოკუმენტაცია: [React Documentation]((https://react.dev/learn))
+დოკუმენტაცია: [React Documentation](https://react.dev/learn)
+
+---
 
 ## 🏠 საშინაო დავალება (Homework)
 
-### დავალება 1 (Counter with Step):
+### დავალება 1 — Counter with Step
 
-შექმენით `AdvancedCounter.jsx` კომპონენტი. ქაუნთერს ჰქონდეს `+1`, `-1` და `Reset` ღილაკები. დაამატეთ `step` State (დეფოლტად `1`), რომლითაც მომხმარებელი შეძლებს აირჩიოს, რამდენით გაიზარდოს/შემცირდეს თვლა (`+5`, `+10` და ა.შ.).
+შექმენით `AdvancedCounter.jsx` კომპონენტი.
 
-### დავალება 2 (Profile Card with Dark Mode Toggle):
+ქაუნთერს უნდა ჰქონდეს შემდეგი ღილაკები:
 
-შექმენით `ProfileCard.jsx` კომპონენტი, რომელიც Props-ით იღებს მომხმარებლის მონაცემებს (`name`, `bio`, `avatarUrl`). კომპონენტის შიგნით ჰქონდეს ღილაკი "Toggle Theme", რომელიც `useState`-ით შეცვლის მხოლოდ ამ კონკრეტული ბარათის ფონს (Light / Dark), `isDark`-ის State-ზე დაყრდნობით.
+- `+1`
+- `-1`
+- `Reset`
 
-`[დიზაინის ლინკი:](https://www.figma.com/design/sSomtkMEXxPZCHYZ4Bvs5d/Profile-Card-UI--Community-?node-id=1-6&t=CpTK44yRrqI242z6-0)`
+დაამატეთ `step` State, რომლის დეფოლტ მნიშვნელობა იქნება `1`.
+
+`step`-ის დახმარებით მომხმარებელს უნდა შეეძლოს აირჩიოს, რამდენით გაიზარდოს ან შემცირდეს თვლა.
+
+მაგალითად:
+
+- `+5`
+- `+10`
+- `-5`
+- `-10`
+
+**მიზანი:** `useState`-ის გამოყენებით Counter-ისა და `step`-ის მდგომარეობის მართვა.
+
+---
+
+### დავალება 2 — Profile Card with Dark Mode Toggle
+
+შექმენით `ProfileCard.jsx` კომპონენტი, რომელიც Props-ის სახით მიიღებს მომხმარებლის მონაცემებს:
+
+- `name`
+- `bio`
+- `avatarUrl`
+
+კომპონენტის შიგნით დაამატეთ **"Toggle Theme"** ღილაკი.
+
+ღილაკმა `useState`-ის დახმარებით უნდა შეცვალოს მხოლოდ კონკრეტული Profile Card-ის ფონი:
+
+- **Light**
+- **Dark**
+
+თემის მდგომარეობა უნდა იმართებოდეს `isDark` State-ის დახმარებით.
+
+**მიზანი:** Props-ისა და `useState`-ის გამოყენება React კომპონენტში.
+
+### 🎨 დიზაინი
+
+[Profile Card UI — Figma Design](https://www.figma.com/design/sSomtkMEXxPZCHYZ4Bvs5d/Profile-Card-UI--Community-?node-id=1-6&t=CpTK44yRrqI242z6-0)
+
